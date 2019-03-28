@@ -15,8 +15,8 @@ public:
     friend ostream & operator << (ostream&out, const Pi &dim);
     void rid();
     Point closest();
-    void pointOut(Point k);
-
+    void pointOut(Point k); // drukowanie punktu
+    void newPoint();        // dodadnie nowego punktu do tablicy
 
 };
 

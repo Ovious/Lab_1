@@ -58,3 +58,22 @@ void Pi::pointOut(Point k){
     cout<<tab->extract(tab+k.extract2(k,1), 1) <<" "<<tab->extract(tab+k.extract2(k,1), 2)<<endl;
     cout<<tab->extract(tab+k.extract2(k,2), 1) <<" "<<tab->extract(tab+k.extract2(k,2), 2)<<endl;
 }
+
+
+void Pi::newPoint(){
+    Point *pt;
+    pt->addPoint();
+    cout<<"dupa";
+    Point* tab2 = new Point [n+1];
+    tab2->insert(tab->extract(tab, 1) ,tab->extract(tab, 2) );
+    for(int i=1 ; i<n ; i++){
+        Point* p = tab2+i;
+        p->insert(tab->extract(tab+i, 1) ,tab->extract(tab+i, 2) );
+    }
+
+    tab2[n] = *pt;
+    n = n+1;
+    Point* p = tab2;
+    tab = tab2;
+    delete p;
+}
