@@ -81,22 +81,20 @@ void Pi::newPoint(){
 }
 
 Pi Pi::operator +(const Pi& p){
-    int m;
-    m = this->n;
-    int k=this->n;
-    Pi dim(8);
-    if(k==5){
-    for( int i=0 ; i<m ; i++){                // dodanie elementów z tab 1 oraz tab2?
+    int k = 0;
+    k = k + this->n;
+    Pi dim(0);
+    Point *pt = new Point;
+    for( int i=0 ; i++ ; i<k){
+        Point* tab = new Point [i+1];
         Point* p = dim.tab+i;
-        p->insert(this->tab->extract(this->tab+i, 1), this->tab->extract(this->tab+i, 2));
+        pt->insert(this->tab->extract(this->tab+i , 1) , this->tab->extract(this->tab+i , 2));
+        p->insert(tab->extract(tab+i, 1) ,tab->extract(tab+i, 2) );
+        
+        
+        dim.tab = tab;
     }
-    }else{
-    for( int i=0 ; i<m ; i++){                // dodanie elementów z tab 1 oraz tab2?
-        Point* p = dim.tab+8-m+i;
-        p->insert(this->tab->extract(this->tab+i, 1), this->tab->extract(this->tab+i, 2));
-    }
-    }
-    k=1;
+    
 
     return dim;                               // zwracanie wyniku
 }

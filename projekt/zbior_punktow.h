@@ -11,12 +11,14 @@ private:
     Point* tab;
 
 public:
-    Pi();
+    Pi(int k);
+    void fill();
     friend ostream & operator << (ostream&out, const Pi &dim);
     void rid();
     Point closest();
     void pointOut(Point k); // drukowanie punktu
     void newPoint();        // dodadnie nowego punktu do tablicy
+    Pi operator+(const Pi& p);
 
 };
 

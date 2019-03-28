@@ -1,6 +1,7 @@
 #include "punkt.h"
 
 Point::Point(){
+    cout<<"Utworzono nowy punkt"<<endl;
     coord_X_ = 0;
     coord_y_ = 0;
 }
