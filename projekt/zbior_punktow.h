@@ -12,6 +12,10 @@ private:
 
 public:
     Pi();
+    friend ostream & operator << (ostream&out, const Pi &dim);
+    void rid();
+    Point closest();
+    void pointOut(Point k);
 
 
 };

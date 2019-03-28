@@ -11,6 +11,9 @@ int main()
     Point dist = dim_1.closest();
     cout<<"najblizsze punktu to:"<<endl;
     dim_1.pointOut(dist);
+    
+    Pi dim_2;
+    
     dim_1.rid();
     return 0;
 }

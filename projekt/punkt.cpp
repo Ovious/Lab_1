@@ -14,3 +14,29 @@ void Point::addPoint(){
     coord_X_ = x;
     coord_y_ = y;
 }
+
+int Point::extract(Point *t, int k){
+    if(k == 1){
+        return t->coord_X_;
+
+    }else{
+        return t->coord_y_;
+    }
+
+}
+
+int Point::extract2(Point t, int k){
+    if(k == 1){
+        return t.coord_X_;
+
+    }else{
+        return t.coord_y_;
+    }
+
+}
+
+void Point::insert(int k, int l){
+    coord_X_=k;
+    coord_y_=l;
+
+}

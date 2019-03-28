@@ -16,6 +16,9 @@ public:
 
     Point();
     void addPoint();
+    int extract(Point* t, int k);
+    void insert(int k, int l );
+    int extract2(Point t, int k);
 
 };
 
