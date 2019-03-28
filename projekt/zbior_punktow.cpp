@@ -77,30 +77,23 @@ void Pi::newPoint(){
     n = n+1;
     p = tab2;
     tab = tab2;
-    delete p;
+
 }
 
 Pi Pi::operator +(const Pi& p){
     int k = 8;
-    Pi dim(1);
-    Point* pt =new Point;
-    dim.tab->insert(this->tab->extract(tab, 1), this->tab->extract(tab, 2));
-    for( int i=1 ; i<k ; i++){
-        Point* tab = new Point [i+1];                               // nowa wieksza tablica
-        Point* p = dim.tab;                                         // adres do poczatku starej tablicy
-        Point* p2=tab;                                              // adres do poczatku nowej tablicy
-        for(int j=0 ; j< i; j++){                                   // przepisanie  starych wartosci do nowej tablicy
-           p2->insert(p->extract(p+i, 1) ,p->extract(p+i, 2) );
-           p2 = p2+j;
-        }
-        pt->insert(this->tab->extract(tab+(i%5), 1), this->tab->extract(tab+(i%5), 2) );   // wyciagniecie wartosci argumentu obiektu operatora
-        p2[i] = *pt;                                                                       // dodanie nowej wartosci na ostatnim miejscu
-        dim.tab=p2;
-        delete p;
-        delete []tab;
-        delete p2;
+    Pi dim(k);
+    Point*pom = dim.tab;
+    for( int i=0; i<k ; i++ ){
+       pom->insert(0, 0);
+       pom=pom+1;
     }
 
-    delete pt;
+
+    pom = dim.tab;
+    for( int i =0 ; i<k ; i++){
+        pom->dodaj(pom, p.tab);
+    }
+
     return dim;                               // zwracanie wyniku
 }

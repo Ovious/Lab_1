@@ -41,3 +41,8 @@ void Point::insert(int k, int l){
     coord_y_=l;
 
 }
+
+void Point::dodaj(Point *t1, Point* t2){
+    t1->coord_X_ = t1->coord_X_ + t2->coord_X_;
+    t1->coord_y_ = t1->coord_y_ + t2->coord_y_;
+}
